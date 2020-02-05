@@ -1,0 +1,21 @@
+name: gohello
+base: core18
+version: git
+summary: Hello again from Golang
+description: |
+  hello prints a friendly greeting.
+grade: devel
+confinement: devmode
+
+apps:
+  gohello:
+    command: gohello
+
+parts:
+  gohello:
+    plugin: go
+    go-importpath: github.com/ryumei/gohello
+    source: .
+    source-type: git
+    build-packages:
+      - gcc
