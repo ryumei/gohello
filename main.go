@@ -1,8 +1,8 @@
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func greeting(name string) string {
@@ -13,12 +13,11 @@ func greeting(name string) string {
 }
 
 func main() {
-    argv := 
-    if os.Args == 1 {
-        fmt.Printf("%s\n", greeting("world"))
-    } else {
-        for arg := range os.Args[1:] {
-            fmt.Printf("%s\n", greeting(arg))            
-        }
-    }
+	if len(os.Args) == 1 {
+		fmt.Printf("%s\n", greeting("world"))
+	} else {
+		for _, arg := range os.Args[1:] {
+			fmt.Printf("%s\n", greeting(arg))
+		}
+	}
 }
